@@ -1,0 +1,25 @@
+{
+  "name": "company_b",
+  "version": "1.0.0",
+  "description": "Company B",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "seed": "node src/seeder/karyawan-seed.js"
+  },
+  "author": "Ferdie",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "joi": "^17.9.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.2.0",
+    "morgan": "^1.10.0"
+  }
+}

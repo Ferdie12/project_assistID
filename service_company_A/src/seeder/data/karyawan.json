@@ -1,0 +1,47 @@
+[
+    {
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "password": "password123",
+      "position": "Frontend Developer"
+    },
+    {
+      "name": "Doe John",
+      "email": "doejohn@example.com",
+      "password": "password123",
+      "position": "Backend Developer"
+    },
+    {
+      "name": "Michael Smith",
+      "email": "michaelsmith@example.com",
+      "password": "password123",
+      "position": "System Administrator"
+    },
+    {
+      "name": "Emily Johnson",
+      "email": "emilyjohnson@example.com",
+      "password": "password123",
+      "position": "Database Administrator"
+    },
+    {
+      "name": "David Brown",
+      "email": "davidbrown@example.com",
+      "password": "password123",
+      "position": "Network Engineer"
+    },
+    {
+      "name": "Sarah Wilson",
+      "email": "sarahwilson@example.com",
+      "password": "password123",
+      "position": "IT Support Specialist",
+      "role": "ADMIN"
+    },
+    {
+      "name": "James Taylor",
+      "email": "jamestaylor@example.com",
+      "password": "password123",
+      "position": "Security Analyst",
+      "role": "ADMIN"
+    }
+  ]
+  

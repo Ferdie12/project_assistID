@@ -1,0 +1,909 @@
+{
+	"info": {
+		"_postman_id": "f62fd7e9-5bbe-4f3f-bd4a-70af6b5d7620",
+		"name": "Project assist id",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28211416",
+		"_collection_link": "https://dark-eclipse-977487.postman.co/workspace/New-Team-Workspace~463b411c-8392-41aa-a319-b31ee7f31daa/collection/28211416-f62fd7e9-5bbe-4f3f-bd4a-70af6b5d7620?action=share&source=collection_link&creator=28211416"
+	},
+	"item": [
+		{
+			"name": "company A",
+			"item": [
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "absen",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN_A}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_A}}/attendance/insert",
+									"host": [
+										"{{BASE_URL_A}}"
+									],
+									"path": [
+										"attendance",
+										"insert"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "permission (izin atau cuti)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN_A}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"start_date\": \"2024-03-21\",\r\n    \"end_date\": \"2024-03-25\",\r\n    \"reason\": \"balik kampung\",\r\n    \"permissionType\": \"cuti\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_A}}/attendance/permission",
+									"host": [
+										"{{BASE_URL_A}}"
+									],
+									"path": [
+										"attendance",
+										"permission"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete permission (izin atau cuti) by id)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN_A}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZGIzMGY4NzBiNDdkZTZlODk1NWQyNCIsIm5hbWUiOiJNYXVsYW5hIiwiZW1haWwiOiJtYXVsYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJFTVBMT1lFRSIsInBvc2l0aW9uIjoiQmFja2VuZCIsImlhdCI6MTcwOTk4MjI1Nn0.Acsj6tovvdjWL_FOT1AqvmSyOfrL9c69RkYsUcf3oQ4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL_A}}/attendance/approve/65fa4192b57959384e8f9f21",
+									"host": [
+										"{{BASE_URL_A}}"
+									],
+									"path": [
+										"attendance",
+										"approve",
+										"65fa4192b57959384e8f9f21"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all permission cuti",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN_A}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_A}}/attendance/permission/one?type=cuti",
+									"host": [
+										"{{BASE_URL_A}}"
+									],
+									"path": [
+										"attendance",
+										"permission",
+										"one"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "cuti"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all permission izin",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN_A}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_A}}/attendance/permission/one?type=izin",
+									"host": [
+										"{{BASE_URL_A}}"
+									],
+									"path": [
+										"attendance",
+										"permission",
+										"one"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "izin"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get report absen",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN_A}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"start_date\": \"2024-03-20\",\r\n    \"end_date\": \"2024-03-25\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_A}}/attendance/report/one",
+									"host": [
+										"{{BASE_URL_A}}"
+									],
+									"path": [
+										"attendance",
+										"report",
+										"one"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "Register User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Ferdie Maulana\",\r\n    \"email\": \"Ferdie321@gmail.com\",\r\n    \"password\": \"Ferdie888\",\r\n    \"confirmpassword\": \"Ferdie888\",\r\n    \"position\": \"Backend\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_A}}/auth/register",
+									"host": [
+										"{{BASE_URL_A}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"pm.environment.set(\"TOKEN_A\", jsonData.data);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"Ferdie321@gmail.com\",\r\n    \"password\": \"Ferdie888\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_A}}/auth/login",
+									"host": [
+										"{{BASE_URL_A}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "Get All Pending izin",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN_A}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_A}}/attendance/permission?type=izin",
+									"host": [
+										"{{BASE_URL_A}}"
+									],
+									"path": [
+										"attendance",
+										"permission"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "izin"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Pending cuti",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN_A}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZGIzMGY4NzBiNDdkZTZlODk1NWQyNCIsIm5hbWUiOiJNYXVsYW5hIiwiZW1haWwiOiJtYXVsYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJFTVBMT1lFRSIsInBvc2l0aW9uIjoiQmFja2VuZCIsImNvbXBhbnkiOiJBIiwiaWF0IjoxNzEwODk5MjMwfQ.P2EKHyJnOjFMlFKkuz0dv1SnI1HWfoZMn0T2as9lN7I",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL_A}}/attendance/permission?type=cuti",
+									"host": [
+										"{{BASE_URL_A}}"
+									],
+									"path": [
+										"attendance",
+										"permission"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "cuti"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "generate report all",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN_A}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"start_date\": \"2024-03-20\",\r\n    \"end_date\": \"2024-03-25\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_A}}/attendance/report",
+									"host": [
+										"{{BASE_URL_A}}"
+									],
+									"path": [
+										"attendance",
+										"report"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "approve (izin atau cuti) by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN_A}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"approval\": \"approved\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_A}}/attendance/approve/65fa35abb57959384e8f9f3c",
+									"host": [
+										"{{BASE_URL_A}}"
+									],
+									"path": [
+										"attendance",
+										"approve",
+										"65fa35abb57959384e8f9f3c"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "company B",
+			"item": [
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "absen",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN_B}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_B}}/attendance/insert",
+									"host": [
+										"{{BASE_URL_B}}"
+									],
+									"path": [
+										"attendance",
+										"insert"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "permission (izin atau cuti)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN_B}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"start_date\": \"2024-03-21\",\r\n    \"end_date\": \"2024-03-25\",\r\n    \"reason\": \"balik kampung\",\r\n    \"permissionType\": \"cuti\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_B}}/attendance/permission",
+									"host": [
+										"{{BASE_URL_B}}"
+									],
+									"path": [
+										"attendance",
+										"permission"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete permission (izin atau cuti) by id)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN_B}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZGIzMGY4NzBiNDdkZTZlODk1NWQyNCIsIm5hbWUiOiJNYXVsYW5hIiwiZW1haWwiOiJtYXVsYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJFTVBMT1lFRSIsInBvc2l0aW9uIjoiQmFja2VuZCIsImlhdCI6MTcwOTk4MjI1Nn0.Acsj6tovvdjWL_FOT1AqvmSyOfrL9c69RkYsUcf3oQ4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL_B}}/attendance/approve/65fa4192b57959384e8f9f21",
+									"host": [
+										"{{BASE_URL_B}}"
+									],
+									"path": [
+										"attendance",
+										"approve",
+										"65fa4192b57959384e8f9f21"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all permission cuti",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN_B}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_B}}/attendance/permission/one?type=cuti",
+									"host": [
+										"{{BASE_URL_B}}"
+									],
+									"path": [
+										"attendance",
+										"permission",
+										"one"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "cuti"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all permission izin",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN_B}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_B}}/attendance/permission/one?type=izin",
+									"host": [
+										"{{BASE_URL_B}}"
+									],
+									"path": [
+										"attendance",
+										"permission",
+										"one"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "izin"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get report absen",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN_B}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"start_date\": \"2024-03-20\",\r\n    \"end_date\": \"2024-03-25\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_B}}/attendance/report/one",
+									"host": [
+										"{{BASE_URL_B}}"
+									],
+									"path": [
+										"attendance",
+										"report",
+										"one"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "Register User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Ode\",\r\n    \"email\": \"ode321@gmail.com\",\r\n    \"password\": \"odeafil888\",\r\n    \"confirmpassword\": \"odeafil888\",\r\n    \"position\": \"frontend\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_B}}/auth/register",
+									"host": [
+										"{{BASE_URL_B}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"pm.environment.set(\"TOKEN_B\", jsonData.data);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"ode321@gmail.com\",\r\n    \"password\": \"odeafil888\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_B}}/auth/login",
+									"host": [
+										"{{BASE_URL_B}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "Get All Pending izin",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN_B}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZGIzMGY4NzBiNDdkZTZlODk1NWQyNCIsIm5hbWUiOiJNYXVsYW5hIiwiZW1haWwiOiJtYXVsYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJFTVBMT1lFRSIsInBvc2l0aW9uIjoiQmFja2VuZCIsImNvbXBhbnkiOiJBIiwiaWF0IjoxNzEwODk5MjMwfQ.P2EKHyJnOjFMlFKkuz0dv1SnI1HWfoZMn0T2as9lN7I",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL_B}}/attendance/permission?type=izin",
+									"host": [
+										"{{BASE_URL_B}}"
+									],
+									"path": [
+										"attendance",
+										"permission"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "izin"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Pending cuti",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN_B}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZGIzMGY4NzBiNDdkZTZlODk1NWQyNCIsIm5hbWUiOiJNYXVsYW5hIiwiZW1haWwiOiJtYXVsYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJFTVBMT1lFRSIsInBvc2l0aW9uIjoiQmFja2VuZCIsImNvbXBhbnkiOiJBIiwiaWF0IjoxNzEwODk5MjMwfQ.P2EKHyJnOjFMlFKkuz0dv1SnI1HWfoZMn0T2as9lN7I",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL_B}}/attendance/permission?type=cuti",
+									"host": [
+										"{{BASE_URL_B}}"
+									],
+									"path": [
+										"attendance",
+										"permission"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "cuti"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "generate report all",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN_B}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZGIzMGY4NzBiNDdkZTZlODk1NWQyNCIsIm5hbWUiOiJNYXVsYW5hIiwiZW1haWwiOiJtYXVsYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJFTVBMT1lFRSIsInBvc2l0aW9uIjoiQmFja2VuZCIsImNvbXBhbnkiOiJBIiwiaWF0IjoxNzEwOTAwMzU0fQ.qCUGushM1xpSddlvQTBpARTkM5XCvSA9QN4SRvbo5xg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"start_date\": \"2024-03-20\",\r\n    \"end_date\": \"2024-03-25\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_B}}/attendance/report",
+									"host": [
+										"{{BASE_URL_B}}"
+									],
+									"path": [
+										"attendance",
+										"report"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "approve (izin atau cuti) by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN_A}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"approval\": \"approved\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_B}}/attendance/approve/65fa35abb57959384e8f9f3c",
+									"host": [
+										"{{BASE_URL_B}}"
+									],
+									"path": [
+										"attendance",
+										"approve",
+										"65fa35abb57959384e8f9f3c"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

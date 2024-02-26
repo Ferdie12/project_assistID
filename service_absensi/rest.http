@@ -1,0 +1,8 @@
+
+get http://localhost:3001/attendance/permission?type=cuti
+Content-Type: application/json
+Authorization: Bearer A eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZGIzMGY4NzBiNDdkZTZlODk1NWQyNCIsIm5hbWUiOiJNYXVsYW5hIiwiZW1haWwiOiJtYXVsYW5hQGdtYWlsLmNvbSIsInJvbGUiOiJFTVBMT1lFRSIsInBvc2l0aW9uIjoiQmFja2VuZCIsImlhdCI6MTcwOTk4MjI1Nn0.Acsj6tovvdjWL_FOT1AqvmSyOfrL9c69RkYsUcf3oQ4
+{
+    "start_date": "2024-02-25",
+    "end_date": "2024-03-16"
+}
