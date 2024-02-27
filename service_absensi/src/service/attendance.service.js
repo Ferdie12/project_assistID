@@ -355,7 +355,10 @@ const deletePermission = async (request) => {
 const generateReportAll = async (request) => {
   const { start_date, end_date } = request.body;
   const start = new Date(start_date);
+  start.setDate(start.getDate() - 1);
+
   const end = new Date(end_date);
+  end.setDate(end.getDate() + 1);
 
   const attendanceRecords = await attendanceModel.find({
     date: { $gte: start, $lte: end },
@@ -436,7 +439,10 @@ const generateReportAll = async (request) => {
 const generateReportForUser = async (request) => {
   const { start_date, end_date } = request.body;
   const start = new Date(start_date);
+  start.setDate(start.getDate() - 1);
+
   const end = new Date(end_date);
+  end.setDate(end.getDate() + 1);
 
   const { id, company } = request.user;
   const checkUser = await axios.get(`${companyURL[company]}/employee/${id}`);
